@@ -1,6 +1,6 @@
 import { IProposalData } from "types/proposal.interface";
 
-export const proposalReducer = (proposalData: IProposalData, action: {
+export const proposalReducer = (proposalData: any, action: {
   type: string;
   payload: unknown;
 }) => {

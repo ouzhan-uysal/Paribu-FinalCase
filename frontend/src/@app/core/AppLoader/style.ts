@@ -34,7 +34,7 @@ export const AppLoaderWrapper = styled.div`
     width: 9px;
     height: 9px;
     border-radius: 100%;
-    background-color: #1890ff;
+    background-color: #000;
     transform: scale(0.75);
     display: block;
     position: absolute;

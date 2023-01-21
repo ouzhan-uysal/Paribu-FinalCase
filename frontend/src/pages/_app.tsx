@@ -4,6 +4,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import createEmotionCache from '@app/utility/createEmotionCache';
 import lightTheme from '@app/utility/theme/lightTheme';
 import darkTheme from '@app/utility/theme/darkTheme';
+import '../styles/global.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import { AuthContextProvider } from 'contexts/authContext';
 import { ProposalContextProvider } from 'contexts/proposalContext';
@@ -19,7 +20,7 @@ const MyApp = (props: ICustomAppProps) => {
 
   return (
     <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={darkTheme || lightTheme}>
+      <ThemeProvider theme={lightTheme || darkTheme}>
         <CssBaseline />
         <AuthContextProvider>
           <ProposalContextProvider>

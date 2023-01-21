@@ -6,8 +6,8 @@ export const GlobalWrapper = styled.div`
     "header header header"
     "article article article"
     "footer footer footer";
-  grid-template-rows: auto 1fr;  // header / container / footer
-  grid-template-columns: 1fr; // sidebar / header & container & footer
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   height: 100vh;
@@ -15,21 +15,6 @@ export const GlobalWrapper = styled.div`
   background-color: #000;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
-
-  * {
-    box-sizing: border-box;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  button {
-    cursor: pointer;
-  }
 
   header, footer, article, nav {
     padding: 1.2rem;

@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { AppHeaderWrapper } from "./style";
 import Image from "next/image";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import AuthContext from "contexts/authContext";
 
 const AppHeader = () => {
@@ -40,7 +40,6 @@ const AppHeader = () => {
             onClick={() => connectMetamask()}
           >{account ? `${account.slice(0, 4)}...${account.slice(-4)}` : 'Connect'}</Button>
         </div>
-        <span>0x51b0b83002Bc0A78b1354506CDf47F23e70195D2</span>
       </div>
     </AppHeaderWrapper>
   )

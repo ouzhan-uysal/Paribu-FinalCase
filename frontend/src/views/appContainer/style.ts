@@ -20,6 +20,8 @@ export const AppContainerWrapper = styled.div`
     .proposalContainer {
       padding: 1rem;
       width: 100%;
+      height: 65vh;
+      overflow: auto;
       list-style-type: none;
       display: flex;
       flex-direction: column;
@@ -49,10 +51,10 @@ export const AppContainerWrapper = styled.div`
     gap: 1rem;
     .contractAddrContainer {
       border-radius: 1rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
+      height: 100%;
     }
     .proposalContent {
       border-radius: 1rem;
