@@ -20,9 +20,9 @@ contract Paribu_FinalCase {
         string[] options;
     }
 
-    // IProposal[] public proposals;
+    mapping(IERC20 => IProposal[]) private proposals;   // one specific token keep proposals
 
-    mapping(IERC20 => IProposal[]) private proposals;
+    event ProposalCreated(string _description, address indexed _sender);  // which consumer created proposal information
 
     constructor() {
         owner = msg.sender;
@@ -38,14 +38,14 @@ contract Paribu_FinalCase {
     }
 
     // function getProposalVotes(IERC20 _token) external view returns () {
-    //     return 
+    //     return
     // }
 
     function createProposal(
         IERC20 _token,
         string calldata _description,
         string[] calldata _options
-    ) external {
+    ) external checkNumberOfOptions(_options) {
         // IOptions[] memory tempArr = new IOptions[](_options.length);
         // for (uint256 i = 0; i < _options.length; i++) {
         //     tempArr[i] = {
@@ -62,5 +62,13 @@ contract Paribu_FinalCase {
             })
         );
         proposalCount += 1;
+
+        emit ProposalCreated(_description, msg.sender);
+    }
+
+    modifier checkNumberOfOptions(string[] memory _options) {
+        require(_options.length > 1, "Option count must be greater than 1");
+        require(_options.length < 5, "Option count must be lower than 5");
+        _;
     }
 }
