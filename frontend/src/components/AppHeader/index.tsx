@@ -1,18 +1,18 @@
 import { Button } from "@mui/material";
 import { AppHeaderWrapper } from "./style";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "contexts/authContext";
 
 const AppHeader = () => {
   const { account, setAccount } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   const { ethereum } = window as any;
-  //   if (ethereum.selectedAddress && setAccount) {
-  //     setAccount(ethereum.selectedAddress);
-  //   };
-  // }, [setAccount]);
+  useEffect(() => {
+    const { ethereum } = window as any;
+    if (setAccount) {
+      setAccount(ethereum.selectedAddress);
+    };
+  }, [setAccount]);
 
   const connectMetamask = async () => {
     const { ethereum } = window as any;

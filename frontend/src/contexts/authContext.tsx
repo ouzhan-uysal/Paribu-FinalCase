@@ -10,14 +10,13 @@ interface IAuthContextProviderProps {
   children: ReactNode;
 }
 export const AuthContextProvider: FC<IAuthContextProviderProps> = ({ children }) => {
-  const [account, setAccount] = useState<string | null>(
-    typeof window !== 'undefined' ? localStorage?.getItem('paribu_authUser') : null);
+  const [account, setAccount] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (account) {
-      localStorage.setItem('paribu_authUser', account);
-    }
-  }, [account]);
+  // useEffect(() => {
+  //   if (account) {
+  //     localStorage.setItem('paribu_authUser', account);
+  //   }
+  // }, [account]);
 
   const value = useMemo(
     () => ({
